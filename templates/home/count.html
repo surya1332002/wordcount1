@@ -1,0 +1,13 @@
+<h1>THERE ARE {{ count }} words IN YOUR TEXT</h1>
+
+<!--<a href = "{% url 'home' %}">startagain</a>-->
+<form action="{% url 'home' %}">
+    <input type="submit" value="go back" />
+</form>
+<h1>your text</h1>
+{{ fulltext }}
+<h1>word count:</h1>
+{% for word, count_total in word_dictionary %}
+{{ word }} | {{ count_total }}
+<br/>
+{% endfor %}
